@@ -3,10 +3,8 @@ package xwh.demo.ipcamera;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.TextView;
 
-import com.turingcat.vstclib.BridgeService;
 import com.turingcat.vstclib.ContentCommon;
 import com.turingcat.vstclib.VstcApi;
 

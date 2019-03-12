@@ -28,7 +28,7 @@ public class VstcApi {
 	}
 
 	/**
-	 * 提供的jni NativeCaller没有完整回调，只能通过隔一段时间去检测的方式去获取扫描结果
+	 * 扫描摄像头
 	 * 注意：在子线程中调用
 	 */
 	public static void startSearch(final Context context, final OnSearchListener onSearchListener) {
@@ -58,6 +58,7 @@ public class VstcApi {
 
 		NativeCaller.StartSearch();
 
+		// 提供的jni NativeCaller没有完整回调，只能通过隔一段时间去检测的方式去获取扫描结果
 		final Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			int count;
@@ -65,7 +66,7 @@ public class VstcApi {
 			@Override
 			public void run() {
 				count++;
-				if (mCameras.size() > 0 || count > 3) {
+				if (mCameras.size() > 0 || count > 3) { // 成功或超时结束
 					isDoing = false;
 					timer.cancel();
 					NativeCaller.StopSearch();
@@ -94,13 +95,13 @@ public class VstcApi {
 				Log.d(TAG, "type:" + type + " param:" + param);
 				isDoing = false;
 				if (type == ContentCommon.PPPP_MSG_TYPE_PPPP_STATUS) {    // 在线
-					if (param == ContentCommon.PPPP_STATUS_CONNECTING || param == ContentCommon.PPPP_STATUS_INITIALING){
+					/*if (param == ContentCommon.PPPP_STATUS_CONNECTING || param == ContentCommon.PPPP_STATUS_INITIALING){
 						Log.d(TAG, "连接中");
 					} else if (param == ContentCommon.PPPP_STATUS_ON_LINE) {
 						Log.d(TAG, "连接成功");
 					} else {
 						Log.d(TAG, "连接失败: " + param);
-					}
+					}*/
 
 					onConnectListener.onResult(param);
 				}
@@ -119,7 +120,7 @@ public class VstcApi {
 		});
 
 		try {
-			Thread.sleep(100);
+			Thread.sleep(100);  // 停顿一小会儿，可能service没起来。
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
