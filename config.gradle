@@ -1,0 +1,7 @@
+ext.deps = [:]
+// 编译相关
+def build_versions = [:]
+build_versions.min_sdk = 19
+build_versions.target_sdk = 21
+build_versions.compile_sdk = 26
+ext.build_versions = build_versions
