@@ -22,5 +22,5 @@ connectCamera(String strDID, String devicePass, OnConnectListener onConnectListe
 ```
 
 ### 使用实例
-- 参考MainActivity代码
+- 参考[MainActivity](./app/src/main/java/xwh/demo/ipcamera/MainActivity.java)代码
 - [官方提供的开发文档](http://www.vstarcam.cn/channel-67.html?tdsourcetag=s_pcqq_aiomsg)
