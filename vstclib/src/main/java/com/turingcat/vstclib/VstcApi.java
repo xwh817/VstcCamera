@@ -80,6 +80,12 @@ public class VstcApi {
 	}
 
 
+	/**
+	 * 连接摄像头
+	 * @param strDID 序列号
+	 * @param devicePass 密码
+	 * @param onConnectListener 回调
+	 */
 	public static void connectCamera(final String strDID, final String devicePass, final OnConnectListener onConnectListener) {
 		if (isDoingSomething()) {
 			return;

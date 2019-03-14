@@ -1,8 +1,8 @@
 package xwh.demo.ipcamera;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.turingcat.vstclib.ContentCommon;
@@ -11,7 +11,7 @@ import com.turingcat.vstclib.VstcApi;
 import vstc2.nativecaller.NativeCaller;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
 	private TextView mTextInfo;
 
