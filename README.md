@@ -4,21 +4,21 @@
 ### 接口功能 VstcApi
 ```java
 
-	/**
-	 * 扫描摄像头
-	 * 注意：在子线程中调用
-	 */
-	public static void startSearch(final Context context, final OnSearchListener onSearchListener)
-  
- 
-	/**
-	 * 连接摄像头
-	 * @param strDID 序列号
-	 * @param devicePass 密码
-	 * @param onConnectListener 回调
-	 */
-	public static void connectCamera(final String strDID, final String devicePass, final OnConnectListener onConnectListener)
-  
+/**
+ * 扫描摄像头
+ * 注意：在子线程中调用
+ */
+startSearch(Context context, OnSearchListener onSearchListener)
+
+
+/**
+ * 连接摄像头
+ * @param strDID 序列号
+ * @param devicePass 密码
+ * @param onConnectListener 回调
+ */
+connectCamera(String strDID, String devicePass, OnConnectListener onConnectListener)
+
 ```
 
 ### 使用实例
